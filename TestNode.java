@@ -1,26 +1,26 @@
 package demo;
 
 public class TestNode {
-	
+
 	public static void main(String[] args) throws InterruptedException {
 		NodeList list = new NodeList();
 		// System.out.print('Создать двусвязный список длиной 10');
 		for (int i = 0; i < 10; i++) {
-			int r = (int)(Math.random() * 100);
+			int r = (int) (Math.random() * 100);
 			Node node = new Node(r);
 			if (i == 0) {
-				 list.head = node; // головной узел
+				list.head = node; // головной узел
 			} else {
 				list.head.append(node);
 			}
-			 list.last = node; // хвостовой узел
+			list.last = node; // хвостовой узел
 		}
-		
-		 // Траверс
+
+		// Траверс
 		System.out.println(list.toString());
-		
-		 // инвертированный
+
+		// инвертированный
 		System.out.println(list.reverse());
-		
+
 	}
 }

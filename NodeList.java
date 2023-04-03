@@ -1,12 +1,13 @@
 package demo;
 
 public class NodeList {
-	
+
 	Node head;
 	Node last;
-	
+
 	/**
-	  * Добавить
+	 * Добавить
+	 * 
 	 * @param node
 	 */
 	public void append(Node node) {
@@ -15,11 +16,11 @@ public class NodeList {
 			node.setPre(head);
 		} else {
 			head.getNext().append(node);
-		}	
+		}
 	}
-	
+
 	/**
-	  * Траверс 
+	 * Траверс
 	 */
 	public String toString() {
 		Node curr = head;
@@ -30,9 +31,9 @@ public class NodeList {
 		}
 		return sBuilder.toString();
 	}
-	
+
 	/**
-	  * Сверху вниз
+	 * Сверху вниз
 	 */
 	public String reverse() {
 		Node curr = head;
@@ -41,14 +42,16 @@ public class NodeList {
 		while (curr != null) {
 			Node pre = curr.getPre();
 			Node next = curr.getNext();
-			 if (pre == null) newLast = curr; // Предыдущий узел пуст, как новый хвостовой узел
-			 if (next == null) newHead = curr; // Следующий узел пуст, как новый головной узел
-			 curr.setNext (pre); // Следующий узел текущего узла используется как предыдущий узел текущего узла
-			 curr.setPre (next); // Предыдущий узел текущего узла является следующим узлом текущего узла
-			 curr = curr.getPre (); // Продолжаем обработку следующего узла исходного узла связанного списка
+			if (pre == null)
+				newLast = curr; // Предыдущий узел пуст, как новый хвостовой узел
+			if (next == null)
+				newHead = curr; // Следующий узел пуст, как новый головной узел
+			curr.setNext(pre); // Следующий узел текущего узла используется как предыдущий узел текущего узла
+			curr.setPre(next); // Предыдущий узел текущего узла является следующим узлом текущего узла
+			curr = curr.getPre(); // Продолжаем обработку следующего узла исходного узла связанного списка
 		}
-		 head = newHead; // Устанавливаем головной узел
-		 last = newLast; // Устанавливаем конечный узел
+		head = newHead; // Устанавливаем головной узел
+		last = newLast; // Устанавливаем конечный узел
 		return this.toString();
 	}
 }

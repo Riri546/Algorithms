@@ -1,17 +1,19 @@
 package demo;
+
 /**
-   * Класс сущности узла
+ * Класс сущности узла
+ * 
  * @author sunlh
  *
  */
 public class Node {
 
-	 private Node pre; // предыдущий узел
-	
-	 private Node next; // следующий узел
-	
-	 private int data; // данные
-	
+	private Node pre; // предыдущий узел
+
+	private Node next; // следующий узел
+
+	private int data; // данные
+
 	public Node(int data) {
 		this.data = data;
 	}
@@ -23,9 +25,9 @@ public class Node {
 		} else {
 			this.next.append(node);
 		}
-		
+
 	}
-		
+
 	public Node getPre() {
 		return pre;
 	}
@@ -49,11 +51,11 @@ public class Node {
 	public boolean hasPre() {
 		return this.pre != null;
 	}
-	
+
 	public boolean hasNext() {
 		return this.next != null;
 	}
-	
+
 	public int getData() {
 		return data;
 	}
